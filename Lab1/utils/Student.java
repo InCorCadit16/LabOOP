@@ -10,4 +10,9 @@ public class Student {
         this.age = age;
         this.avgMark = avgMark;
     }
+
+    @Override
+    public String toString() {
+        return "Name: " + fullName + "\n Age: " + age + "\n Average Mark: " + avgMark;
+    }
 }

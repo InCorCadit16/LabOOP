@@ -23,10 +23,6 @@ public class Task1 {
         if (monitor1 == monitor2) 
             System.out.print("monitor1 and monitor2 is the same monitor");
         else 
-            System.out.print("monitor1 and monitor2 are different instsces of monitors");
-        
-            
+            System.out.print("monitor1 and monitor2 are different instances of monitors");
     }
-
-  
 }
