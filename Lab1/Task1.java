@@ -1,7 +1,7 @@
-package Lab1;
+package lab1;
 
-import Lab1.utils.Monitor;
-import Lab1.utils.Resolution;
+import lab1.utils.Monitor;
+import lab1.utils.Resolution;
 
 public class Task1 {
     

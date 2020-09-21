@@ -1,7 +1,7 @@
-package Lab1;
+package lab1;
 
-import Lab1.utils.University;
-import Lab1.utils.Student;
+import lab1.utils.University;
+import lab1.utils.Student;
 
 public class Task2 {
 

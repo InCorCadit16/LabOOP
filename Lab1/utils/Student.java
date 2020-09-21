@@ -1,4 +1,4 @@
-package Lab1.utils;
+package lab1.utils;
 
 public class Student {
     public String fullName;
