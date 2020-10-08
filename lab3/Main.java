@@ -12,19 +12,27 @@ public class Main {
             + "fulfilling the criteria required by modern science. Such theories are described in such a way that scientific tests should be able "
             + "to provide empirical support for it, or empirical contradiction (\"falsify\") of it. Scientific theories are the most reliable, "
             + "rigorous, and comprehensive form of scientific knowledge,[1] in contrast to more common uses of the word \"theory\" that imply that "
-            + "something is unproven or speculative (which in formal terms is better characterized by the word hypothesis).[2] Scientific theories "
+            + "something is unproven or speculative (which in formal terms is better characterized by the word hypothesis). Scientific theories "
             + "are distinguished from hypotheses, which are individual empirically testable conjectures, and from scientific laws, which are "
             + "descriptive accounts of the way nature behaves under certain conditions.\n Theories guide the enterprise of finding facts rather "
             + "than of reaching goals, and are neutral concerning alternatives among values. A theory can be a body of knowledge, which may "
-            + "or may not be associated with particular explanatory models. To theorize is to develop this body of knowledge.";
+            + "or may not be associated with particular explanatory models?? To theorize is to develop this body of knowledge. querty... .";
 
-    // static final String INPUT = "test orE h tIme. qwd.";
+
     public static void main(String[] args) {
-        Pattern p = Pattern.compile("[.]");
+        Pattern p = Pattern.compile("[A-Z]|[a-z]");
+        StringBuilder onlyWords = new StringBuilder();
+        for (Character c : INPUT.toCharArray()) {
+            if (Character.isAlphabetic(c) || Character.isWhitespace(c)) {
+                onlyWords.append(c);
+            }
+        }
+
+        p = Pattern.compile("(([^.][.])|[!?]+)\\s|$");
         System.out.printf("Number of sentences: %d\n", p.matcher(INPUT).results().count());
 
-        p = Pattern.compile("\s");
-        System.out.printf("Number of words: %d\n", p.matcher(INPUT).results().count() + 1);
+        p = Pattern.compile("\\s");
+        System.out.printf("Number of words: %d\n", p.matcher(onlyWords.toString()).results().count() + 1);
 
         p = Pattern.compile("[A-Z]|[a-z]");
         System.out.printf("Number of letters: %d\n", p.matcher(INPUT).results().count());
@@ -35,16 +43,8 @@ public class Main {
         p = Pattern.compile("[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]");
         System.out.printf("Number of consonants: %d\n", p.matcher(INPUT).results().count());
 
-        p = Pattern.compile("[A-Z]|[a-z]");
-        StringBuilder onlyWords = new StringBuilder();
-        for (Character c : INPUT.toCharArray()) {
-            if (Character.isAlphabetic(c) || Character.isWhitespace(c)) {
-                onlyWords.append(c);
-            }
-        }
-
         System.out.println("\nTop 5 most often words: ");
-        String[] words = onlyWords.toString().split("\s");
+        String[] words = onlyWords.toString().split("\s+");
         ArrayList<String> list = new ArrayList<>(Arrays.asList(words));
         list.stream()
             .collect(Collectors.groupingBy(word -> word))
