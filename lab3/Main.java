@@ -16,7 +16,7 @@ public class Main {
             + "are distinguished from hypotheses, which are individual empirically testable conjectures, and from scientific laws, which are "
             + "descriptive accounts of the way nature behaves under certain conditions.\n Theories guide the enterprise of finding facts rather "
             + "than of reaching goals, and are neutral concerning alternatives among values. A theory can be a body of knowledge, which may "
-            + "or may not be associated with particular explanatory models?? To theorize is to develop this body of knowledge. querty... .";
+            + "or may not be associated with particular explanatory models?? To theorize is to develop this body of knowledge.";
 
 
     public static void main(String[] args) {
